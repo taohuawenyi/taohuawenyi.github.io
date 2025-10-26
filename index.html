@@ -1,54 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>桃花文艺</title>
-    <style>
-        /* 页面基础样式 */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            /* 使用flex布局实现居中 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-            overflow: hidden; /* 禁止页面滚动 */
-            padding: 20px; /* 页面边缘留一定空间 */
-            box-sizing: border-box; /* 确保padding不会导致页面溢出 */
-        }
-
-        /* 图片容器样式 */
-        .image-container {
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 100%;
-            max-height: 100%;
-            box-sizing: border-box; /* 确保padding包含在容器尺寸内 */
-        }
-
-        /* 图片响应式处理 */
-        .centered-image {
-            display: block; /* 确保图片作为块级元素处理 */
-            max-width: 100%;  /* 不超过容器宽度（含内边距） */
-            max-height: calc(100vh - 80px); /* 考虑页面和容器的内边距 */
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-    </style>
+    <meta name="description" content="茕茕孑立，与世无争，以守净土。">
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
     <div class="image-container">
         <!-- 外链图片，保持居中显示 -->
-        <img src="./Pix/thwy.jpg"
-             alt="桃花文艺"
-             class="centered-image">
+        <img src="./Pix/thwy.jpg" alt="桃花文艺" class="centered-image">
     </div>
+
+    <footer>
+        <span id="jinrishici-sentence">正在加载今日诗词....</span><br>
+        &copy; 2011&ndash;<span id="year"></span> <a href="https://taohuawenyi.com" class="site-link">桃花文艺</a> All
+        rights reserved. | <a href="mailto:hi@taohuawenyi.com">Email</a>
+    </footer>
+    <script type="module" src="main.js"></script>
 </body>
+
 </html>

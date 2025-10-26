@@ -1,0 +1,90 @@
+/* 页面基础样式 */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* 使用flex布局实现居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    /* 禁止页面滚动 */
+    padding: 20px;
+    /* 页面边缘留一定空间 */
+    box-sizing: border-box;
+    /* 确保padding不会导致页面溢出 */
+
+    /* 新增字体设置 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 图片容器样式 */
+.image-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    /* 确保padding包含在容器尺寸内 */
+}
+
+/* 图片响应式处理 */
+.centered-image {
+    display: block;
+    /* 确保图片作为块级元素处理 */
+    max-width: 100%;
+    /* 不超过容器宽度（含内边距） */
+    max-height: calc(100vh - 80px);
+    /* 考虑页面和容器的内边距 */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+footer {
+    margin-top: 3rem;
+    /* 与上方内容保持距离 */
+    padding: 1rem 0 0 0;
+    /* 内边距：上 右 下 左 */
+    font-size: 0.85rem;
+    color: var(--muted, #555);
+    text-align: center;
+    border-top: 1px solid var(--border, #ccc);
+
+    position: absolute;
+    /* 绝对定位，使其靠近底部但不固定悬浮 */
+    bottom: 10px;
+    /* 距离底部10px，略留空间 */
+    left: 50%;
+    /* 水平居中定位 */
+    transform: translateX(-50%);
+    /* 居中修正 */
+    width: 100%;
+    max-width: 800px;
+    /* 限制页脚最大宽度 */
+    box-sizing: border-box;
+}
+
+/* 所有链接默认无下划线，悬停显示下划线 */
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 桃花文艺链接固定颜色 */
+footer a.site-link,
+footer a.site-link:visited {
+    color: #f0ada0;
+}
+
+/* 其他链接保持浏览器默认颜色 */
+footer a:not(.site-link) {
+    color: revert;
+}
