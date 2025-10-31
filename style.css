@@ -93,8 +93,7 @@ footer a.site-link:visited {
 
 /* 其他链接浏览器颜色 */
 footer a:not(.site-link) {
-    /*color: revert;*/
-    color: #3693F3;
+    color: revert;
 }
 
 
