@@ -9,8 +9,7 @@ function initEmailTooltip(selector = '.email-link') {
         link.addEventListener('click', e => {
             e.preventDefault();
 
-            // 手机端点击显示/隐藏悬浮框
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 768) { // 手机端行为
                 const isShown = link.classList.toggle('show-tooltip');
 
                 if (isShown) {
@@ -27,6 +26,12 @@ function initEmailTooltip(selector = '.email-link') {
         });
     });
 }
+
+// 页面加载后初始化
+document.addEventListener('DOMContentLoaded', () => {
+    initEmailTooltip();
+});
+
 
 
 // 动态加载「今日诗词」SDK

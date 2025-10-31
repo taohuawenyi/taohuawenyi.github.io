@@ -103,6 +103,7 @@ footer a:not(.site-link) {
     content: attr(data-email);
     position: absolute;
     bottom: 120%;
+    /* 浮框在上方 */
     left: 50%;
     transform: translateX(-50%);
     background: #333;
@@ -110,7 +111,7 @@ footer a:not(.site-link) {
     padding: 4px 8px;
     border-radius: 6px;
     white-space: nowrap;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s;
