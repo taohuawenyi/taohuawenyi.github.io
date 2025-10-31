@@ -1,5 +1,34 @@
 // main.js (作为 ES Module 使用)
 
+// 邮箱地址显示
+function initEmailTooltip(selector = '.email-link') {
+    const emailLinks = document.querySelectorAll(selector);
+    if (!emailLinks || emailLinks.length === 0) return;
+
+    emailLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+
+            // 手机端点击显示/隐藏悬浮框
+            if (window.innerWidth < 768) {
+                const isShown = link.classList.toggle('show-tooltip');
+
+                if (isShown) {
+                    // 点击其他地方关闭悬浮框
+                    const handleClickOutside = evt => {
+                        if (!link.contains(evt.target)) {
+                            link.classList.remove('show-tooltip');
+                            document.removeEventListener('click', handleClickOutside);
+                        }
+                    };
+                    document.addEventListener('click', handleClickOutside);
+                }
+            }
+        });
+    });
+}
+
+
 // 动态加载「今日诗词」SDK
 function loadJinrishici() {
     const el = document.getElementById('jinrishici-sentence');
@@ -26,6 +55,7 @@ function updateYear() {
 }
 
 function init() {
+    initEmailTooltip();
     loadJinrishici();
     updateYear();
 }

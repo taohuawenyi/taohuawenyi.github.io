@@ -45,6 +45,7 @@ body {
     border-radius: 4px;
 }
 
+
 footer {
     margin-top: 3rem;
     /* 与上方内容保持距离 */
@@ -84,7 +85,44 @@ footer a.site-link:visited {
     color: #f0ada0;
 }
 
-/* 其他链接保持浏览器默认颜色 */
+/* 其他链接浏览器颜色 */
 footer a:not(.site-link) {
-    color: revert;
+    /*color: revert;*/
+    color: #3693F3;
+}
+
+
+/* 邮箱地址显示 */
+.email-link {
+    position: relative;
+    cursor: pointer;
+}
+
+/* 悬浮框样式 */
+.email-link::after {
+    content: attr(data-email);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+/* PC 悬停显示 */
+.email-link:hover::after {
+    opacity: 1;
+}
+
+/* 手机点击显示 */
+.email-link.show-tooltip::after {
+    opacity: 1;
 }
