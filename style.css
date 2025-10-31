@@ -70,6 +70,12 @@ footer {
     box-sizing: border-box;
 }
 
+/* 增加诗词和版权信息间距 */
+footer #poem-container {
+    margin-bottom: 0.5rem;
+    /* 调整数值控制间距大小 */
+}
+
 /* 所有链接默认无下划线，悬停显示下划线 */
 footer a {
     text-decoration: none;
